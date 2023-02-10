@@ -1,4 +1,4 @@
-<h1>0x01. Shell, permissions/h1>
+<h1> 0x01. Shell, permissions </h1>
 File: 0-iam_betty (a script that switches the current user to the user betty.)  <br />
 File: 1-who_am_i  (a script that prints the effective username of the current user.) <br />
 File: 2-groups  (a script that prints all the groups the current user is part of.)  <br />
