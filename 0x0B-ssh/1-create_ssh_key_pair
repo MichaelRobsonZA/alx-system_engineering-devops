@@ -1,6 +1,16 @@
-#!/usr/bin/env bash
-# This script generates an RSA key pair.
+#!/bin/bash
 
-# Generate the key pair without a passphrase and 4096 bits
-ssh-keygen -t rsa -b 4096 -f ~/.ssh/school
+# Set the key file name
+key_name="school"
+
+# Generate the RSA key pair
+ssh-keygen -t rsa -b 4096 -f "$key_name" -N "betty"
+
+echo "Generating public/private rsa key pair."
+echo "Your identification has been saved in $key_name."
+echo "Your public key has been saved in $key_name.pub."
+echo "The key fingerprint is:"
+cat "$key_name.pub" | awk '{print $2}' | ssh-keygen -lf - | awk '{print $2}' ORS=""
+echo "The key's randomart image is:"
+ssh-keygen -lvf "$key_name"
 
