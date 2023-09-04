@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# This script configures Nginx on a new Ubuntu machine and adds a custom HTTP header
+
+# Install Nginx if not already installed
+if ! dpkg -l | grep -q nginx; then
+    apt-get update
+    apt-get -y install nginx
+fi
+
+# Create a custom Nginx configuration file for the custom header
+CUSTOM_HEADER_CONFIG="/etc/nginx/conf.d/custom_header.conf"
+echo "add_header X-Served-By \$hostname;" > "$CUSTOM_HEADER_CONFIG"
+
+# Restart Nginx to apply the changes
+service nginx restart
+
