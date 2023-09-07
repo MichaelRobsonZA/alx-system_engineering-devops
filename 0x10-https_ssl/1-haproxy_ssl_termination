@@ -13,8 +13,8 @@ global
     crt-base /etc/ssl/private
 
     # SSL configuration (modify paths accordingly)
-    ssl-default-bind-ciphers <YOUR_SSL_CIPHERS>
-    ssl-default-bind-ciphersuites <YOUR_SSL_CIPHERSUITES>
+    ssl-default-bind-ciphers <ECDHE-RSA-AES256-SHA384>
+    ssl-default-bind-ciphersuites <TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256>
     ssl-default-bind-options ssl-min-ver TLSv1.2 no-tls-tickets
 
 defaults
